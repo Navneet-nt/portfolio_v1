@@ -1,0 +1,269 @@
+/* Main stylesheet for portfolio website */
+/* Base Styles */ 
+:root { 
+    --primary-color: #2563eb; 
+    --secondary-color: #3b82f6; 
+    --dark-color: #1e293b; 
+    --light-color: #f8fafc; 
+    --gray-color: #94a3b8; 
+    --success-color: #10b981; 
+    --transition: all 0.3s ease; 
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    --border-radius: 8px; 
+} 
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+
+html { 
+    scroll-behavior: smooth; 
+} 
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    line-height: 1.6; 
+    color: var(--dark-color); 
+    background-color: var(--light-color); 
+} 
+
+a { 
+    text-decoration: none; 
+    color: var(--dark-color); 
+} 
+
+ul { 
+    list-style: none; 
+} 
+
+img { 
+    max-width: 100%; 
+    display: block; 
+} 
+
+.btn { 
+    display: inline-block; 
+    padding: 12px 24px; 
+    border-radius: var(--border-radius); 
+    font-weight: 500; 
+    cursor: pointer; 
+    transition: var(--transition); 
+} 
+
+.primary-btn { 
+    background-color: var(--primary-color); 
+    color: var(--light-color); 
+} 
+
+.primary-btn:hover { 
+    background-color: var(--secondary-color); 
+    transform: translateY(-3px); 
+    box-shadow: var(--shadow); 
+} 
+
+.secondary-btn { 
+    background-color: transparent; 
+    color: var(--primary-color); 
+    border: 2px solid var(--primary-color); 
+} 
+
+.secondary-btn:hover { 
+    background-color: var(--primary-color); 
+    color: var(--light-color); 
+    transform: translateY(-3px); 
+    box-shadow: var(--shadow); 
+} 
+
+.small-btn { 
+    padding: 8px 16px; 
+    font-size: 0.9rem; 
+} 
+
+.section-header { 
+    text-align: center; 
+    margin-bottom: 3rem; 
+} 
+
+.section-header h2 { 
+    font-size: 2.5rem; 
+    margin-bottom: 0.5rem; 
+    color: var(--dark-color); 
+} 
+
+.underline { 
+    height: 4px; 
+    width: 60px; 
+    background: var(--primary-color); 
+    margin: 0 auto; 
+} 
+
+section { 
+    padding: 100px 0; 
+}
+
+/* Navigation */ 
+#navbar { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1.5rem 5%; 
+    background-color: rgba(248, 250, 252, 0.95); 
+    backdrop-filter: blur(10px); 
+    z-index: 1000; 
+    transition: var(--transition); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+} 
+
+#navbar.scrolled { 
+    padding: 1rem 5%; 
+    background-color: rgba(248, 250, 252, 0.98); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+} 
+
+.logo { 
+    font-size: 1.8rem; 
+    font-weight: 700; 
+    color: var(--primary-color); 
+    cursor: pointer; 
+} 
+
+.nav-links { 
+    display: flex; 
+    justify-content: space-around; 
+    width: 50%; 
+} 
+
+.nav-links li a { 
+    font-weight: 500; 
+    transition: var(--transition); 
+    position: relative; 
+} 
+
+.nav-links li a:hover { 
+    color: var(--primary-color); 
+} 
+
+.nav-links li a::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: -5px; 
+    left: 0; 
+    width: 0; 
+    height: 2px; 
+    background-color: var(--primary-color); 
+    transition: var(--transition); 
+} 
+
+.nav-links li a:hover::after { 
+    width: 100%; 
+} 
+
+.burger { 
+    display: none; 
+    cursor: pointer; 
+} 
+
+.burger div { 
+    width: 25px; 
+    height: 3px; 
+    background-color: var(--dark-color); 
+    margin: 5px; 
+    transition: var(--transition); 
+} 
+
+/* Hero Section */ 
+.hero-section { 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 10%; 
+    position: relative; 
+    overflow: hidden; 
+} 
+
+.hero-content { 
+    max-width: 600px; 
+} 
+
+.hero-content h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 1rem; 
+} 
+
+.highlight { 
+    color: var(--primary-color); 
+} 
+
+.typing-text { 
+    font-size: 1.8rem; 
+    margin-bottom: 1.5rem; 
+    color: var(--gray-color); 
+    position: relative; 
+} 
+
+.typing-text::after { 
+    content: '|'; 
+    position: absolute; 
+    right: -8px; 
+    animation: blink 0.7s infinite; 
+} 
+
+@keyframes blink { 
+    0%, 100% { opacity: 1; } 
+    50% { opacity: 0; } 
+} 
+
+.hero-content p { 
+    font-size: 1.2rem; 
+    color: var(--gray-color); 
+    margin-bottom: 2rem; 
+} 
+
+.hero-cta { 
+    display: flex; 
+    gap: 1rem; 
+} 
+
+.hero-image { 
+    position: relative; 
+    width: 40%; 
+} 
+
+.shape { 
+    width: 350px; 
+    height: 350px; 
+    background-color: var(--primary-color); 
+    border-radius: 50%; 
+    position: relative; 
+    overflow: hidden; 
+    box-shadow: var(--shadow); 
+} 
+
+.shape::before { 
+    content: ''; 
+    position: absolute; 
+    top: 30px; 
+    right: -80px; 
+    width: 200px; 
+    height: 200px; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 50%; 
+} 
+
+.shape::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: -50px; 
+    left: 30px; 
+    width: 150px; 
+    height: 150px; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 50%; 
+}
